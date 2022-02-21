@@ -1,0 +1,37 @@
+{
+  "name": "wallet",
+  "version": "1.0.0",
+  "private": false,
+  "dependencies": {
+    "bulma-start": "0.0.2",
+    "react": "^16.4.1",
+    "react-app": "^1.1.2",
+    "react-dom": "^16.4.1",
+    "react-scripts": "^5.0.0",
+    "rewired": "^0.0.0",
+    "stream-browserify": "^3.0.0",
+    "stream-http": "^3.2.0",
+    "web3": "^1.7.0"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "react-app-rewired": "^2.2.1"
+  }
+}

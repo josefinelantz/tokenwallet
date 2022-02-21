@@ -1,5 +1,11 @@
+React App 
+
 It will allow the user to send ERC20 and ERC721 tokens.
 
 It can mint new tokens if the address owner is the contract owner for the token. Minting issues new ERC20 or ERC721 tokens and credits them to any Ethereum account on the network. 
 
 It will approve an Ethereum account to spend the tokens on the user's behalf. Certain use cases and workflows might require the user account to approve or authorize an external party to debit their account and transfer tokens. The approve functionality allows us to achieve the same.
+
+Token interfaces
+
+We need to map the contract ABI and provide a suitable contract interface that our app can use for invoking the token smart contracts and calling the contracts methods.
