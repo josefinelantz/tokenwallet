@@ -2,9 +2,9 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-contract Condos is ERC721 {
+contract Condos is ERC721URIStorage {
     // Id holds the value of the last/latest token issued by our contract.
     uint32 public Id;
     
@@ -16,17 +16,17 @@ contract Condos is ERC721 {
         Id = 0;
     }
 
-    function createNFT(address receiver) external returns (uint32) {
+    function createNFT(address receiver, string calldata metadata) external returns (uint32) {
         Id++;
         _mint(receiver, Id);
-        tokenURI(Id);
+        _setTokenURI(Id, metadata);
         MDTrack[receiver] = Id;
         return Id;
     }
 
-    function transferNFT(address sender, address receiver, uint32 transId) external {
+    function transferNFT(address sender, address receiver, uint32 transId, string calldata metadata) external {
         transferFrom(sender, receiver, transId);
-        tokenURI(transId);
+        _setTokenURI(transId, metadata);
         delete MDTrack[sender];
         MDTrack[receiver] = Id;
     }

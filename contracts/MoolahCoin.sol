@@ -12,6 +12,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 contract MoolahCoin is ERC20Capped, Ownable {
   constructor() 
   ERC20("Moolah Coin", "MC") 
-  ERC20Capped(10000000000) payable {
+  ERC20Capped(100000000000000) payable {
+    ERC20._mint(msg.sender, 1000000000);
   }
 }
